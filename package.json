@@ -1,7 +1,7 @@
 {
   "name": "@mardillu/us-cities-utils",
   "version": "1.0.0",
-  "description": "A brief description of your library",
+  "description": "A lightweight TypeScript utility library to work with US cities and ZIP codes — perfect for filters, maps, address lookups, and geolocation logic.",
   "main": "dist/index.js",
   "private": false,
   "module": "dist/index.esm.js",
@@ -21,6 +21,7 @@
     "@babel/core": "^7.28.3",
     "@babel/preset-env": "^7.28.3",
     "@rollup/plugin-commonjs": "^28.0.6",
+    "@rollup/plugin-json": "^6.1.0",
     "@rollup/plugin-node-resolve": "^16.0.1",
     "@rollup/plugin-typescript": "^12.1.4",
     "@types/jest": "^30.0.0",

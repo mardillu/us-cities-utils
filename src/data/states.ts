@@ -1,5 +1,5 @@
 import cityList from './us_cities.json'
-import {CuCity, CuState} from "./types";
+import {CuState} from "./types";
 
 const states: CuState[] = [
     {nameAbbr: 'AL', name: 'Alabama'},
