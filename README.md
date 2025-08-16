@@ -1,11 +1,11 @@
 
-# 📍 US Cities & Zipcode Utilities
+# US Cities & Zipcode Utilities
 
 A lightweight TypeScript utility library to work with US cities and ZIP codes — perfect for filters, maps, address lookups, and geolocation logic.
 
 ---
 
-## ✨ Features
+## Features
 
 - 🔍 **Get states** and cities from a normalized dataset
 - 📬 Lookup city data by ZIP code
@@ -16,17 +16,17 @@ A lightweight TypeScript utility library to work with US cities and ZIP codes �
 
 ---
 
-## 📦 Installation
+## Installation
 
 ```bash
-npm install @your-scope/us-cities-utils
+npm install @mardillu/us-cities-utils
 # or
-yarn add @your-scope/us-cities-utils
+yarn add @mardillu/us-cities-utils
 ````
 
 ---
 
-## 🧰 Usage
+## Usage
 
 ```ts
 import {
@@ -38,62 +38,62 @@ import {
   groupCitiesByState,
   getCitiesByCounty,
   getNearestCity
-} from '@your-scope/us-cities-utils';
+} from '@mardillu/us-cities-utils';
 ```
 
 ---
 
-## 🔧 API Reference
+## API Reference
 
-### ✅ `getStates(): State[]`
+### `getStates(): State[]`
 
 Returns a list of all US states in `{ id: string, name: string }` format.
 
 ---
 
-### ✅ `getCities(stateAbbr: string): CuCity[]`
+### `getCities(stateAbbr: string): CuCity[]`
 
 Returns all cities in a given state abbreviation (e.g. `'NY'`, `'CA'`).
 
 ---
 
-### ✅ `getCity(zip: string): CuCity | undefined`
+### `getCity(zip: string): CuCity | undefined`
 
 Returns city information for a given ZIP code.
 
 ---
 
-### ✅ `searchCities(query: string): CuCity[]`
+### `searchCities(query: string): CuCity[]`
 
 Returns cities whose names match (or partially match) the search string.
 
 ---
 
-### ✅ `groupCitiesByState(): Record<string, CuCity[]>`
+### `groupCitiesByState(): Record<string, CuCity[]>`
 
 Groups all cities in the dataset by their state abbreviation.
 
 ---
 
-### ✅ `getAllZips(): string[]`
+### `getAllZips(): string[]`
 
 Returns a list of all ZIP codes in the dataset.
 
 ---
 
-### ✅ `getCitiesByCounty(county: string): CuCity[]`
+### `getCitiesByCounty(county: string): CuCity[]`
 
 Returns a list of cities belonging to a given county name.
 
 ---
 
-### ✅ `getNearestCity(lat: number, lon: number): CuCity | undefined`
+### `getNearestCity(lat: number, lon: number): CuCity | undefined`
 
 Finds and returns the city nearest to the given latitude and longitude using the Haversine formula.
 
 ---
 
-## 🧪 Testing
+## Testing
 
 ```bash
 npm test
@@ -103,7 +103,7 @@ Includes robust unit tests for all exported functions and geolocation logic.
 
 ---
 
-## 🗃️ Data Format
+## Data Format
 
 Each city is in the format:
 
@@ -122,7 +122,7 @@ interface CuCity {
 
 ---
 
-## 🚀 Roadmap
+## Roadmap
 
 * [ ] Add support for Canadian provinces
 * [ ] Add caching for nearest city lookup
@@ -130,13 +130,13 @@ interface CuCity {
 
 ---
 
-## 🤝 Contribution
+## Contribution
 
 PRs are welcome! If you'd like to contribute, open an issue or submit a PR.
 
 ---
 
-## 📄 License
+## License
 
 MIT © \Mardillu
 
