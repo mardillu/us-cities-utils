@@ -1,4 +1,8 @@
 
+[![Publish Package to NPM](https://github.com/mardillu/us-cities-utils/actions/workflows/npm-publish.yml/badge.svg)](https://github.com/mardillu/us-cities-utils/actions/workflows/npm-publish.yml)
+[![Publish Package to Github](https://github.com/mardillu/us-cities-utils/actions/workflows/npm-publish-github-packages.yml/badge.svg)](https://github.com/mardillu/us-cities-utils/actions/workflows/npm-publish-github-packages.yml)
+[![Unit Tests](https://github.com/mardillu/us-cities-utils/actions/workflows/tests.yml/badge.svg)](https://github.com/mardillu/us-cities-utils/actions/workflows/tests.yml)
+
 # US Cities & Zipcode Utilities
 
 A lightweight TypeScript utility library to work with US cities and ZIP codes — perfect for filters, maps, address lookups, and geolocation logic.
