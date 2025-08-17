@@ -11,21 +11,25 @@ export function getCities(stateAbbr: string): UsCity[] {
     const filteredCities = cities.filter(city => city.stateAbbr === stateAbbr.toUpperCase());
 
     // Use a Set to filter out duplicate city names
-    return filteredCities.filter((value, index, self) =>
+    const uniqueCities = filteredCities.filter((value, index, self) =>
             index === self.findIndex((t) => (
                 t.name === value.name
             ))
     );
+
+    return uniqueCities.sort((a, b) => a.name.localeCompare(b.name));
 }
 
 export function getCitiesBySateName(state: string): UsCity[] {
     const filteredCities = cities.filter(city => city.state.toLowerCase() === state.toLowerCase());
 
-    return filteredCities.filter((value, index, self) =>
+    const uniqueCities = filteredCities.filter((value, index, self) =>
             index === self.findIndex((t) => (
                 t.name === value.name
             ))
     );
+
+    return uniqueCities.sort((a, b) => a.name.localeCompare(b.name));
 }
 
 export function getZipcodes(stateAbbr: string): UsCity[] {
@@ -42,7 +46,15 @@ export function getCity(zip: string): UsCity | undefined {
 
 export function searchCities(query: string): UsCity[] {
     const q = query.toLowerCase();
-    return cities.filter(city => city.name.toLowerCase().includes(q));
+    const filteredCities = cities.filter(city => city.name.toLowerCase().includes(q));
+
+    const uniqueCities = filteredCities.filter((value, index, self) =>
+            index === self.findIndex((t) => (
+                t.name === value.name
+            ))
+    );
+
+    return uniqueCities.sort((a, b) => a.name.localeCompare(b.name));
 }
 
 export function groupCitiesByState(): Record<string, UsCity[]> {
