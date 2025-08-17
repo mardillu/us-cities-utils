@@ -51,25 +51,25 @@ Returns a list of all US states in `{ id: string, name: string }` format.
 
 ---
 
-### `getCities(stateAbbr: string): CuCity[]`
+### `getCities(stateAbbr: string): UsCity[]`
 
 Returns all cities in a given state abbreviation (e.g. `'NY'`, `'CA'`).
 
 ---
 
-### `getCity(zip: string): CuCity | undefined`
+### `getCity(zip: string): UsCity | undefined`
 
 Returns city information for a given ZIP code.
 
 ---
 
-### `searchCities(query: string): CuCity[]`
+### `searchCities(query: string): UsCity[]`
 
 Returns cities whose names match (or partially match) the search string.
 
 ---
 
-### `groupCitiesByState(): Record<string, CuCity[]>`
+### `groupCitiesByState(): Record<string, UsCity[]>`
 
 Groups all cities in the dataset by their state abbreviation.
 
@@ -81,13 +81,13 @@ Returns a list of all ZIP codes in the dataset.
 
 ---
 
-### `getCitiesByCounty(county: string): CuCity[]`
+### `getCitiesByCounty(county: string): UsCity[]`
 
 Returns a list of cities belonging to a given county name.
 
 ---
 
-### `getNearestCity(lat: number, lon: number): CuCity | undefined`
+### `getNearestCity(lat: number, lon: number): UsCity | undefined`
 
 Finds and returns the city nearest to the given latitude and longitude using the Haversine formula.
 
@@ -108,13 +108,13 @@ Includes robust unit tests for all exported functions and geolocation logic.
 Each city is in the format:
 
 ```ts
-interface CuCity {
+interface UsCity {
   zip: string;
-  city: string;
+  name: string;
   state: string;
-  state_abbr: string;
+  stateAbbr: string;
   county: string;
-  count_code: string;
+  countCode: string;
   latitude: number;
   longitude: number;
 }

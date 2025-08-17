@@ -1,7 +1,7 @@
 import cityList from './us_cities.json'
-import {CuCity, CuState} from "./types";
+import {UsState} from "./types";
 
-const states: CuState[] = [
+const states: UsState[] = [
     {nameAbbr: 'AL', name: 'Alabama'},
     {nameAbbr: 'AK', name: 'Alaska'},
     {nameAbbr: 'AZ', name: 'Arizona'},

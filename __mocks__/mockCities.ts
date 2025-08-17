@@ -2,7 +2,7 @@
 export const mockCities = [
     {
         zip: '10001',
-        city: 'New York',
+        name: 'New York',
         state: 'New York',
         stateAbbr: 'NY',
         county: 'New York',
@@ -12,7 +12,7 @@ export const mockCities = [
     },
     {
         zip: '90001',
-        city: 'Los Angeles',
+        name: 'Los Angeles',
         state: 'California',
         stateAbbr: 'CA',
         county: 'Los Angeles',
@@ -22,7 +22,7 @@ export const mockCities = [
     },
     {
         zip: '60601',
-        city: 'Chicago',
+        name: 'Chicago',
         state: 'Illinois',
         stateAbbr: 'IL',
         county: 'Cook',

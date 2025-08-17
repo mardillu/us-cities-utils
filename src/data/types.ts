@@ -1,6 +1,6 @@
-export type CuCity = {
+export type UsCity = {
     zip: string;
-    city: string;
+    name: string;
     state: string;
     stateAbbr: string;
     county: string;
@@ -9,7 +9,7 @@ export type CuCity = {
     longitude: string;
 };
 
-export type CuState = {
+export type UsState = {
     nameAbbr: string;
     name: string;
 }

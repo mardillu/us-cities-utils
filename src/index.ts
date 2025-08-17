@@ -1,38 +1,38 @@
 import {cityList, states} from "./data/states";
-import {CuCity} from "./data/types";
+import {UsCity} from "./data/types";
 
-const cities = cityList as unknown as CuCity[];
+const cities = cityList as unknown as UsCity[];
 
 export function getStates() {
     return states;
 }
 
-export function getCities(stateAbbr: string): CuCity[] {
+export function getCities(stateAbbr: string): UsCity[] {
     return cities.filter(city => city.stateAbbr === stateAbbr.toUpperCase());
 }
 
-export function getCity(zip: string): CuCity | undefined {
+export function getCity(zip: string): UsCity | undefined {
     return cities.find(city => city.zip === zip);
 }
 
-export function searchCities(query: string): CuCity[] {
+export function searchCities(query: string): UsCity[] {
     const q = query.toLowerCase();
-    return cities.filter(city => city.city.toLowerCase().includes(q));
+    return cities.filter(city => city.name.toLowerCase().includes(q));
 }
 
-export function groupCitiesByState(): Record<string, CuCity[]> {
+export function groupCitiesByState(): Record<string, UsCity[]> {
     return cities.reduce((acc, city) => {
         if (!acc[city.stateAbbr]) acc[city.stateAbbr] = [];
         acc[city.stateAbbr].push(city);
         return acc;
-    }, {} as Record<string, CuCity[]>);
+    }, {} as Record<string, UsCity[]>);
 }
 
 export function getAllZips(): string[] {
     return cities.map(c => c.zip);
 }
 
-export function getCitiesByCounty(county: string): CuCity[] {
+export function getCitiesByCounty(county: string): UsCity[] {
     const normalized = county.toLowerCase();
     return cities.filter(city => city.county.toLowerCase() === normalized);
 }
@@ -51,9 +51,9 @@ function haversine(lat1: number, lon1: number, lat2: number, lon2: number): numb
     return 3961 * c; // Miles
 }
 
-export function getNearestCity(lat: number, lon: number): CuCity | undefined {
+export function getNearestCity(lat: number, lon: number): UsCity | undefined {
     let minDist = Infinity;
-    let nearest: CuCity | undefined;
+    let nearest: UsCity | undefined;
 
     for (const city of cities) {
         const dist = haversine(lat, lon, parseFloat(city.latitude), parseFloat(city.longitude));
