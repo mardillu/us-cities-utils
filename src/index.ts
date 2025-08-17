@@ -57,6 +57,32 @@ export function searchCities(query: string): UsCity[] {
     return uniqueCities.sort((a, b) => a.name.localeCompare(b.name));
 }
 
+export function searchCitiesInSate(stateAbbr: string, query: string): UsCity[] {
+    const q = query.toLowerCase();
+    const filteredCities = cities.filter(city =>  city.stateAbbr === stateAbbr.toUpperCase() && city.name.toLowerCase().includes(q));
+
+    const uniqueCities = filteredCities.filter((value, index, self) =>
+            index === self.findIndex((t) => (
+                t.name === value.name
+            ))
+    );
+
+    return uniqueCities.sort((a, b) => a.name.localeCompare(b.name));
+}
+
+export function searchCitiesInSateByStateName(state: string, query: string): UsCity[] {
+    const q = query.toLowerCase();
+    const filteredCities = cities.filter(city =>  city.state === state.toUpperCase() && city.name.toLowerCase().includes(q));
+
+    const uniqueCities = filteredCities.filter((value, index, self) =>
+            index === self.findIndex((t) => (
+                t.name === value.name
+            ))
+    );
+
+    return uniqueCities.sort((a, b) => a.name.localeCompare(b.name));
+}
+
 export function groupCitiesByState(): Record<string, UsCity[]> {
     return cities.reduce((acc, city) => {
         if (!acc[city.stateAbbr]) acc[city.stateAbbr] = [];

@@ -91,6 +91,18 @@ Returns cities whose names match (or partially match) the search string.
 
 ---
 
+### `searchCitiesInSate(stateAbbr: string, query: string): UsCity[]`
+
+Returns cities whose names match (or partially match) the search string withing the provided state abbreviation.
+
+---
+
+### `searchCitiesInSateByStateName(state: string, query: string): UsCity[] `
+
+Returns cities whose names match (or partially match) the search string withing the provided state name.
+
+---
+
 ### `groupCitiesByState(): Record<string, UsCity[]>`
 
 Groups all cities in the dataset by their state abbreviation.
