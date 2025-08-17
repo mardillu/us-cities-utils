@@ -1,6 +1,6 @@
 {
   "name": "@mardillu/us-cities-utils",
-  "version": "1.1.0",
+  "version": "1.1.1",
   "description": "A lightweight TypeScript utility library to work with US cities and ZIP codes — perfect for filters, maps, address lookups, and geolocation logic.",
   "main": "dist/index.js",
   "private": false,
