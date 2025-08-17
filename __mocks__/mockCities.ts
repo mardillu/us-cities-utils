@@ -11,6 +11,16 @@ export const mockCities = [
         longitude: '-73.9967',
     },
     {
+        zip: '10002',
+        name: 'New York',
+        state: 'New York',
+        stateAbbr: 'NY',
+        county: 'New York',
+        countCode: '61',
+        latitude: '40.7484',
+        longitude: '-73.9967',
+    },
+    {
         zip: '90001',
         name: 'Los Angeles',
         state: 'California',

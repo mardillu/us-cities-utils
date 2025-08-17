@@ -61,6 +61,24 @@ Returns all cities in a given state abbreviation (e.g. `'NY'`, `'CA'`).
 
 ---
 
+### `getCitiesBySateName(state): UsCity[]`
+
+Returns all cities in a given state name (e.g. `'New York'`, `'California'`).
+
+---
+
+### `getZipcodes(stateAbbr): UsCity[]`
+
+Returns all cities and zipcodes in a given state abbreviation (e.g. `'NY'`, `'CA'`).
+
+---
+
+### `getZipcodesBySateName(state): UsCity[]`
+
+Returns all cities and zipcodes in a given state name (e.g. `'New York'`, `'California'`).
+
+---
+
 ### `getCity(zip: string): UsCity | undefined`
 
 Returns city information for a given ZIP code.

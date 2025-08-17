@@ -8,7 +8,32 @@ export function getStates() {
 }
 
 export function getCities(stateAbbr: string): UsCity[] {
+    const filteredCities = cities.filter(city => city.stateAbbr === stateAbbr.toUpperCase());
+
+    // Use a Set to filter out duplicate city names
+    return filteredCities.filter((value, index, self) =>
+            index === self.findIndex((t) => (
+                t.name === value.name
+            ))
+    );
+}
+
+export function getCitiesBySateName(state: string): UsCity[] {
+    const filteredCities = cities.filter(city => city.state.toLowerCase() === state.toLowerCase());
+
+    return filteredCities.filter((value, index, self) =>
+            index === self.findIndex((t) => (
+                t.name === value.name
+            ))
+    );
+}
+
+export function getZipcodes(stateAbbr: string): UsCity[] {
     return cities.filter(city => city.stateAbbr === stateAbbr.toUpperCase());
+}
+
+export function getZipcodesBySateName(state: string): UsCity[] {
+    return cities.filter(city => city.state.toLowerCase() === state.toLowerCase());
 }
 
 export function getCity(zip: string): UsCity | undefined {

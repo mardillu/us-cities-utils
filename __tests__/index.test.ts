@@ -6,10 +6,11 @@ import {
     groupCitiesByState,
     getAllZips,
     getCitiesByCounty,
-    getNearestCity, __internal__
+    getNearestCity, __internal__,
+    getCitiesBySateName,
+    getZipcodes,
+    getZipcodesBySateName
 } from '../src';
-
-// import { mockCities } from '../__mocks__/mockCities';
 
 jest.mock('../src/data/us_cities.json', () => ({
     __esModule: true,
@@ -23,10 +24,30 @@ describe('City Utilities', () => {
         expect(states.length).toBeGreaterThan(0);
     });
 
-    test('getCities(stateAbbr) returns cities in the state', () => {
+    test('getCities(stateAbbr) returns unique cities in the state', () => {
         const cities = getCities('NY');
         expect(cities).toHaveLength(1);
         expect(cities[0].name).toBe('New York');
+    });
+
+    test('getCitiesBySateName(state) returns unique cities in the state', () => {
+        const cities = getCitiesBySateName('New York');
+        expect(cities).toHaveLength(1);
+        expect(cities[0].name).toBe('New York');
+    });
+
+    test('getZipcodes(state) returns cities in the state', () => {
+        const cities = getZipcodes('NY');
+        expect(cities).toHaveLength(2);
+        expect(cities[0].zip).toBe('10001');
+        expect(cities[1].zip).toBe('10002');
+    });
+
+    test('getZipcodesBySateName(state) returns cities in the state', () => {
+        const cities = getZipcodesBySateName('New York');
+        expect(cities).toHaveLength(2);
+        expect(cities[0].zip).toBe('10001');
+        expect(cities[1].zip).toBe('10002');
     });
 
     test('getCity(zip) returns the correct city object', () => {
@@ -50,8 +71,9 @@ describe('City Utilities', () => {
     test('getAllZips() returns all ZIPs', () => {
         const zips = getAllZips();
         expect(zips).toContain('10001');
+        expect(zips).toContain('10002');
         expect(zips).toContain('90001');
-        expect(zips.length).toBe(3);
+        expect(zips.length).toBe(4);
     });
 
     test('getCitiesByCounty(county) returns matches', () => {
