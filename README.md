@@ -49,9 +49,9 @@ import {
 
 ## API Reference
 
-### `getStates(): State[]`
+### `getStates(): UsState[]`
 
-Returns a list of all US states in `{ id: string, name: string }` format.
+Returns a list of all US states in `{ nameAbbr: string, name: string }` format.
 
 ---
 

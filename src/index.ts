@@ -1,9 +1,9 @@
 import {cityList, states} from "./data/states";
-import {UsCity} from "./data/types";
+import {UsCity, UsState} from "./data/types";
 
 const cities = cityList as unknown as UsCity[];
 
-export function getStates() {
+export function getStates(): UsState[] {
     return states;
 }
 
